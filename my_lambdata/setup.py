@@ -8,7 +8,7 @@ with open("README.md", "r") as fh:
     long_description = fh.read()
 
 setup(
-    name="my-lambdata-DSPT5", # the name that you will install via pip
+    name="my-lambdata-DSPT5sean", # the name that you will install via pip
     version="1.0",
     author="Sean",
     author_email="your@email.com",
