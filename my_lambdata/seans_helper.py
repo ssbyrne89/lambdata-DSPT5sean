@@ -1,7 +1,7 @@
 #sean's helper
 
 from sklearn.model_selection import train_test_split
-import pandas as pd
+
 
 
 
@@ -13,7 +13,7 @@ def helper1(X):
     X = X.copy()
     
     # Convert date_recorded to datetime
-    X['Date'] = pd.to_datetime(X['Date'], infer_datetime_format=True)
+    X['Date'] = pandas.to_datetime(X['Date'], infer_datetime_format=True)
     
     # Extract components from date_recorded, then drop the original column
     X['year'] = X['Date'].dt.year
