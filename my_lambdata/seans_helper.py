@@ -38,6 +38,4 @@ def helper2(X):
     train, val = train_test_split(train, train_size=0.80, test_size=0.20, 
                               stratify=train['status_group'], random_state=42)
 
-train = helper2(train)
-val = helper2(val)
-test = helper2(test)
+    return train, val, test
