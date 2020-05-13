@@ -5,7 +5,7 @@ from sklearn.model_selection import train_test_split
 
 
 
-def helper1(X):
+ddef helper1(X):
     """this will create new columns in the dataset
     for each time metric i.e. year, month, week, etc..."""
     
@@ -13,7 +13,7 @@ def helper1(X):
     X = X.copy()
     
     # Convert date_recorded to datetime
-    X['Date'] = pandas.to_datetime(X['Date'], infer_datetime_format=True)
+    X['Date'] = pd.to_datetime(X['Date '], infer_datetime_format=True)
     
     # Extract components from date_recorded, then drop the original column
     X['year'] = X['Date'].dt.year
@@ -32,10 +32,10 @@ def helper1(X):
 def helper2(X):
 
     # Split train into train & val
-    train, test = train_test_split(X, train_size=0.80, test_size=0.20, 
-                              stratify=train['status_group'], random_state=42)
+    train_one, test = train_test_split(X, train_size=0.80, test_size=0.20,
+                                       random_state=42)
 
-    train, val = train_test_split(train, train_size=0.80, test_size=0.20, 
-                              stratify=train['status_group'], random_state=42)
+    train, val = train_test_split(train_one, train_size=0.80, test_size=0.20, 
+                              random_state=42)
 
     return train, val, test
