@@ -1,11 +1,11 @@
 #sean's helper
 
-from sklearn.model_selection import train_test_split
+#from sklearn.model_selection import train_test_split
+import pandas as pd
 
 
 
-
-ddef helper1(X):
+def helper1(X):
     """this will create new columns in the dataset
     for each time metric i.e. year, month, week, etc..."""
     
@@ -25,17 +25,18 @@ ddef helper1(X):
     X['second'] = X['Date'].dt.second
     X = X.drop(columns='Date')
 
-    # return the wrangled dataframe
+    # return the dataframe
     return X
 
 
-def helper2(X):
+class MyFrame(pd.DataFrame):
+    def helper2(X):
 
-    # Split train into train & val
-    train_one, test = train_test_split(X, train_size=0.80, test_size=0.20,
-                                       random_state=42)
+        # Split train into train & val
+        train_one, test = (train_test_split(X, train_size=0.80, test_size=0.20,
+                                       random_state=42))
 
-    train, val = train_test_split(train_one, train_size=0.80, test_size=0.20, 
-                              random_state=42)
+        train, val = (train_test_split(train_one, train_size=0.80, test_size=0.20, 
+                              random_state=42))
 
-    return train, val, test
+        return train, val, test
