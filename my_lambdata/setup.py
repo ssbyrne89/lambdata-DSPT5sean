@@ -9,7 +9,7 @@ with open("README.md", "r") as fh:
 
 setup(
     name="my-lambdata-DSPT5sean", # the name that you will install via pip
-    version="1.4",
+    version="1.5",
     author="Sean",
     author_email="your@email.com",
     description="a package created for training purposes",
