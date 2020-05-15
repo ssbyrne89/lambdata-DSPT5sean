@@ -32,10 +32,10 @@ def helper1(X):
 def helper2(X):
 
     # Split train into train & val
-    train_one, test = (train_test_split(X, train_size=0.80, test_size=0.20,
-                                   random_state=42))
+    train_one, test = train_test_split(X, train_size=0.80, test_size=0.20,
+                                   random_state=42)
 
-    train, val = (train_test_split(train_one, train_size=0.80, test_size=0.20, 
-                          random_state=42))
+    train, val = train_test_split(train_one, train_size=0.80, test_size=0.20, 
+                          random_state=42)
 
     return train, val, test
