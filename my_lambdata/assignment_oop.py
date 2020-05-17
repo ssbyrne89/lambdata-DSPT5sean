@@ -3,22 +3,29 @@
 from pandas import DataFrame
 
 
+class DataProcessor():
+    def __init__(self, something_else):
+        """
+        params: something_else (pandas.DataFrame) has a column cal
+        """
+        self.df = something_else
 
-def add_state_names(my_df):
-    # todo: add a column of corresponding state names
+    def add_state_names(self):
+        '''
+        adds a column to state names to accompany a corresponding state names
+        '''
+        names_map = {"CA":"Cali","CO":"Colo","CT":"Conn"}
+        self.df["name"] = self.df["abbrev"].map(names_map)
 
-    names_map = {"CA":"Cali","CO":"Colo","CT":"Conn"}
-
-    ##breakpoint()
-
-    return my_df
 
 
 if __name__ == "__main__":
     
 
     df = DataFrame({"abbrev":["CA","CO","CT","DC","TX"]})
-    print(df.head())
+    
+    processor = DataProcessor(df)
+    print(processor.df.head())
 
-    df2 = add_state_names(df)
-    print(df2.head())
+    processor.add_state_names()
+    print(processor.df.head())

@@ -13,20 +13,18 @@ class TestAssignment(unittest.TestCase):
         
         df = DataFrame({"abbrev":["CA","CO","CT","DC","TX"]})
         self.assertEqual(list(df.columns), ['abbrev'])
+        breakpoint()
 
 
         result = add_state_names(df)
         self.assertEqual(list(result.columns), ["abbrev", "name"])
+        self.assertEqual(result.iloc[0]['abbrev'], "CA")
+        self.assertEqual(result.iloc[0]['abbrev'], "Cali")
     #after we invoke the function:
     # expect that it has one more columna dn same number of rows
     # expect that certain column names exist before and certain column names exist after
 
-
-        #breakpoint()
     #self.assertEqual("foo".upper(), "FOO") #> True or False
     #df.columns)
-
-
-
 if __name__ == '__main__':
     unittest.main()

@@ -18,5 +18,5 @@ setup(
     license="MIT",
     url="https://github.com/ssbyrne89/lambdata-DSPT5sean",
     #keywords="",
-    packages=find_packages() # ["my_lambdata"]
+    packages=["my_lambdata"] # ["my_lambdata"]
 )
