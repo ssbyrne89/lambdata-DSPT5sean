@@ -4,7 +4,7 @@ A python package with various functions; for training purposes
 
 ## installation
 
-TODO
+pip install pip install -i https://test.pypi.org/simple/ my-lambdata-DSPT5sean
 
 ## usage
 
